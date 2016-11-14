@@ -82,5 +82,24 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 ## Writing good tests
 1. What to Test
   * You only have to test the parts that need to work - ha ha
-  *
-2.
+  * How much test coverage we need
+  * depends on complexity too
+  * existing code: write test by priorities
+  * Happy path => users get what they want
+  * Unhappy path => when things dont work out and we need to handle it
+  * Edge cases
+  * Any bug that gets fixed
+
+2. What not to Test
+  * Basic Ruby
+  * Basic Ruby on Rails
+  * Third party APIs
+  * Behaviour being tested already
+
+## More advice
+- A bad, partial or broken test can be worse than none
+- Keep your test suite fast, you will run it more often
+- Run tests often
+- Every time you do a commit or push code
+- Keep your test passing all the time
+- Avoid writing brittle test
