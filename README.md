@@ -114,19 +114,57 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 '--order defined| '--order random|the order that our tests are ran|
 
 
-Global: ~/.rspec
-Project: ./.rspec - overwrites the global configs
-Local: ./.rspec-local - not checked into source code managers, overwrites both above setting
-Command line (can be defined from)
-Inside Rspec code you can also specify these
+- Global: ~/.rspec
+- Project: ./.rspec - overwrites the global configs
+- Local: ./.rspec-local - not checked into source code managers, overwrites both above setting
+- Command line (can be defined from)
+- Inside Rspec code you can also specify these
 
 ### Basic syntaxt
 
 ```
 describe "Car" do
 
-#examples
+# examples
 
 end
 
 ```
+
+```
+describe "Car" do -> this a Ruby block that comes after it
+
+  it "allows reading for :wheels" do
+    #expectations
+  end
+
+end
+
+```
+
+```
+describe "Car" do -> this a Ruby block that comes after it
+
+  describe '.colors' do
+  it "returns an array of color names" do
+    c = ['blue', 'black', 'red', 'green']
+    expect(Car.colors).to match_array(c)
+  end
+
+end
+
+```
+
+```
+  expect(   ).to(  )
+  expect(   ).not_to(  )
+
+```
+
+## Rspec Hierarchy
+
+* spec file             car-spec.rb
+  * example group         describe
+    * nested group          describe/context
+      * example               it
+        * expectations          expect().to()
