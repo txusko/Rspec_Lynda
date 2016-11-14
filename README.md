@@ -163,8 +163,10 @@ end
 
 ## Rspec Hierarchy
 
+```
 * spec file             car-spec.rb
   * example group         describe
     * nested group          describe/context
       * example               it
         * expectations          expect().to()
+```
