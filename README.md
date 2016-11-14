@@ -105,10 +105,10 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 - Avoid writing brittle test
 
 ## Configuration
-|Basic settings | You can set them|
-|---------------|-----------------|
-|"--no-color"| '--color'|
-|--format progress| --format documentation|
---no-profile, --profile
---no-fail-fast, --fail-fast
---order defined, --order random
+|Basic settings | You can set them|What it means|
+|---------------|-----------------|-------------|
+|"--no-color"| '--color'|The outcome is multicoloured or just one colour|
+|'--format progress'| '--format documentation'| |
+|'--no-profile'| '--profile'|Fastest and slowest test profile|
+|'--no-fail-fast'| '--fail-fast'|whether Rspec runs all the tests and then reports all failures or as soon as they occur|
+'--order defined| '--order random|the order that our tests are ran|
