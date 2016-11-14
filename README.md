@@ -1,5 +1,5 @@
-## Rspec
-### Rspec is a testing framework for Ruby
+# Rspec
+## Rspec is a testing framework for Ruby
 
 Writing code to test other code
 
@@ -8,7 +8,7 @@ Writing code to test other code
 
 Spec: An executable example that tests whether a portion of code exhibits the expected behaviour in a controlled context
 
-# What is Rspec?
+## What is Rspec?
 
 * Given ome context
 * When some event occurs
@@ -27,11 +27,11 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 
 ## Wht are software tests important?
 
-# Reasons not to test:
+### Reasons not to test:
 - writing tests requires more time
 - time is money
 
-## Reasons to test:
+### Reasons to test:
 - writing tests finds bugs
 - simulates critical thinking
 - covers edge cases (extremes)
@@ -44,7 +44,7 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 - saves headache
 - helps to sleep at night :)
 
-## Always test?
+### Always test?
 - small application may not need testing
 - testing is more critical as complexity increases
 - most developers start testing as they gain experience
@@ -56,18 +56,18 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 * Excellent communication tool with clients
 * Describes a single step in the user experience
 
-# User Story #1
+### User Story #1
 * Given that a user is not logged in
 * When the user visits the login page
 * Then the user should see form fields for username and password and a submit button
 
-# User Story #2
+### User Story #2
 * Given that a user is not logged in and is viewing the login form
 * When the user enters a valid name and password and submits the form
 * Then the site should redirect them to th approriate user page
 (happy path)
 
-# User Story #3
+### User Story #3
 * Given that user is not logged in and is viewing the login form
 * When the user enters a valid username and an invalid password and submits the form
 * Then the site should return a not valid generic page and return the login page
@@ -82,5 +82,5 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 ## Writing good tests
 1. What to Test
   * You only have to test the parts that need to work - ha ha
-  * 
+  *
 2.
