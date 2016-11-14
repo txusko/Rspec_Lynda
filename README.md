@@ -112,3 +112,10 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 |'--no-profile'| '--profile'|Fastest and slowest test profile|
 |'--no-fail-fast'| '--fail-fast'|whether Rspec runs all the tests and then reports all failures or as soon as they occur|
 '--order defined| '--order random|the order that our tests are ran|
+
+
+Global: ~/.rspec
+Project: ./.rspec - overwrites the global configs
+Local: ./.rspec-local - not checked into source code managers, overwrites both above setting
+Command line (can be defined from)
+Inside Rspec code you can also specify these
