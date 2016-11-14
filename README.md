@@ -107,8 +107,8 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 ## Configuration
 |Basic settings | You can set them|
 |---------------|-----------------|
-|--no-color| --color|
---format progress, --format documentation
+|"--no-color"| '--color'|
+|--format progress| --format documentation|
 --no-profile, --profile
 --no-fail-fast, --fail-fast
 --order defined, --order random
