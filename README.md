@@ -103,3 +103,12 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 - Every time you do a commit or push code
 - Keep your test passing all the time
 - Avoid writing brittle test
+
+## Configuration
+|Basic settings | new
+|--|--|
+|--no-color| --color|
+--format progress, --format documentation
+--no-profile, --profile
+--no-fail-fast, --fail-fast
+--order defined, --order random
