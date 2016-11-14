@@ -105,8 +105,8 @@ Spec: An executable example that tests whether a portion of code exhibits the ex
 - Avoid writing brittle test
 
 ## Configuration
-|Basic settings | new
-|--|--|
+|Basic settings | You can set them|
+|---------------|-----------------|
 |--no-color| --color|
 --format progress, --format documentation
 --no-profile, --profile
