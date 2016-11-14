@@ -119,3 +119,14 @@ Project: ./.rspec - overwrites the global configs
 Local: ./.rspec-local - not checked into source code managers, overwrites both above setting
 Command line (can be defined from)
 Inside Rspec code you can also specify these
+
+### Basic syntaxt
+
+```
+describe "Car" do
+
+#examples
+
+end
+
+```
