@@ -170,3 +170,22 @@ end
       * example               it
         * expectations          expect().to()
 ```
+
+## What are test doubles?
+
+* Are an object we use during testing, this stands in during testing, it is substituting the actual thing, like an actor for the actual actor.
+* Like a placeholder.
+* An object that stands in for another object
+* Similar to a stand-in or boudy double for and actor/actress
+* We dont always need the real object, we can create a stunt double for testing
+* Various names: doubles, mocks, stubs, fakes, spies, dummies
+* Not used consistently and sometimes they are described with slightly different behaviours
+* Most commonly is doubles or mocks
+
+### Why use them?
+
+* When the real object is difficult to work with, or 'expensive'
+* A simler version will serve our purpose just as well
+* Responses are unpredictable
+* Having fixed, expected responses makes testing easier
+* 
