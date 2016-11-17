@@ -188,4 +188,21 @@ end
 * A simler version will serve our purpose just as well
 * Responses are unpredictable
 * Having fixed, expected responses makes testing easier
-* 
+
+e.g. test for a method 'is_the_sun_up?' this returns true if the sun is up and false at nighttime
+We dont want a test to fail if we wrote the method at daytime but it fails at nighttime. Instead we can create a double for the object that returns the current time so that it returns the responses we want. We can fake it as noon in one example and test that, and in another example we can double it again and make it midnight this time to test how it works there. => Our test will pas any time at the day but we can also test both scenarios.
+Having an expected response for testing is better for our testing than having a real response.
+
+* Examples: sending eamil, interacting with an API
+
+### What do test doubles do?
+
+* Set known return values
+* Fake method implementations
+* Set expectations about calls to an object
+
+#### Definitions
+
+1. Double/mock: a simple object preprogrammed with expectations and responses as preparation for the calls it will receive
+2. Stub: an instruction to an object to return a specific response to a method call
+3. Double and allow in Rspec 3
