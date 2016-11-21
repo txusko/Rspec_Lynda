@@ -276,3 +276,10 @@ expect(x).to be == 1
 expect(x).to eql(1)  - stricter
 expect(x).to equal(1)  - very strict, rare
 ```
+
+## Truthiness Matchers
+- We expect something to be true
+
+```
+expect( 1 < 2).to be true
+expect(1 > 2).to be false

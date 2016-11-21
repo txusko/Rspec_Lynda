@@ -3,3 +3,4 @@
 --no-profile
 --order defined
 --require spec_helper
+--format documentation
