@@ -20,11 +20,16 @@ describe Car do
       car.color = 'red'
       expect(car.color).to eq('red')
     end
+
+    it 'allows writing for :doors'
+
   end
 
 
   describe '.colors' do
 
-  describe '#full_name' do
+    describe '#full_name' do
 
+    end
+  end
 end
