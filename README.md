@@ -206,3 +206,73 @@ Having an expected response for testing is better for our testing than having a 
 1. Double/mock: a simple object preprogrammed with expectations and responses as preparation for the calls it will receive
 2. Stub: an instruction to an object to return a specific response to a method call
 3. Double and allow in Rspec 3
+
+## Skipping and pending test
+* Pending (still runs them and expects them to fail)
+  * Omit the block
+  * Use 'pending' inside the block (must be a failing test)
+* Skipping
+  * Use xdescribe or xit
+
+## Fundamentals
+### Expectation fundamentals
+* In general, one expectation per example
+* With more you will only see the first failure
+
+```
+expect().to()
+expect.not_to()
+@name = 'Kevin'
+expect(@name).to eq('Kevin)
+expect(@visible).to be(true)
+expect(@numbers).to match_array([4,5,2,8])
+
+expect(actual).to match(expected)
+```
+### Matcher
+* Matchers are used as arguments to #to()
+* Expectations are simple statements
+* Matchers provide the variety and complexity
+  * Equivalence matchers
+  * Truthiness matchers
+  * Numeric-comparison matchers
+  * Collection matchers
+  * Observation matchers
+
+### Deprecated Modifier: should
+- Outdated matcher, it was present in Rspec 2
+- @count.should eq(3) (problem! count can be anything!)
+"Count could be an array, a string, another kind of object that we've defined, and "should" has to be a method available for all of those kinds of objects. We have to make it globally available on every single object that could possibly come up."
+- Required adding #should to every Ruby object
+- Global 'monkey patching' = bad practice
+- should syntax is still available - will give you warnings
+- Use #expect exclusively
+- Revise old code to use #expect
+
+### Examples with 'should'
+- it 'should return an array of colour names' (better: it 'returns an array of color names')
+- it 'should allow reading and writing from :make' (better: it 'allows reading and writing for :make')
+- it should do something vs it does something, avoid using it!!
+
+## Equivalence Matchers
+
+```
+x = 1
+x == 1    #true
+x == 1.0  #true
+x == "1"  #false
+
+x.eql?(1) #true -this is value equality
+x.eql?(1.0) #false (it is a float)
+x.eql?('1') #false
+
+x = 'Lynda'
+x == 'Lynda' #true   - loose eq
+x.eql?('Lynda') #true - value eq
+x.equal?('Lynda') #false - identity eq
+
+expect(x).to eq(1)  - we want this most of the time!
+expect(x).to be == 1
+expect(x).to eql(1)  - stricter
+expect(x).to equal(1)  - very strict, rare
+```
