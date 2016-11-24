@@ -283,3 +283,144 @@ expect(x).to equal(1)  - very strict, rare
 ```
 expect( 1 < 2).to be true
 expect(1 > 2).to be false
+
+expect(nil).to be_nil - no variation here, nil can only be nil
+```
+
+## Numeric comparison matchers
+- We want to write expectation which compare numeric values
+
+```
+expect(100).to eq(100)
+expect(100).to be == 100   #less common
+expect(100).to be > 99 etc.
+expect(5).to be_between(3, 5).inclusive
+expect(5).not_to be_between(3, 5).exclusive
+expect(100).to be_within(5).of(105)
+expect(1..10).to cover(3)
+
+```
+
+## Collection Matchers
+- arrays
+- hashes
+- strings
+
+```
+array = [1,2,3]
+expect(array).to include(3)
+expect(array).to include(2,3)
+expect(array).to start_with(1)
+expect(array).to end_with(3)
+
+expect(array).to match_array([3,2,1])
+expect(array).not_to contain_exactly(3,2,1)
+
+string = 'Lynda'
+
+expect(string).to include('Ly') etc. similar to arrays
+
+hash = {:city => 'Dallas', :state => 'TX'}
+expect(hash).to include(:city)
+expect(hash).to include(:city, :state)
+expect(hash).to include(:city => 'Dallas')
+
+```
+
+## Other matchers
+- matchers for regex
+  - match a string using regex
+  - only with strings!!
+- object type matchers
+  - object is an instance of a class?
+
+```
+expect(@bob).to be_instance_of(Subscriber)
+expect(@bob).to be_an_instance_of(Subscriber)
+expect(@bob).to be_a_kind_of(Customer)
+expect(@bob).to be_a(Customer)
+expect([1,2,3]).to be_an(Array)
+```
+- respond to matcher
+```
+expect(@bob).to respond_to(:first_name) #method
+```
+- attribute matcher
+- satisfy matcher (it takes a block) #last resort!!
+
+## Predicate matchers
+- are dinamically defined, not built in
+- useful with custom methods
+- hash.has_key?
+- hash.has_value?
+
+## Observation matchers
+- allow us to create expectation about how things change
+- objects, values, error, output
+- expect {}.to ()
+
+```
+array = []
+expect { array << 1 }.to change(array, :empty?).from(true).to(false)
+
+```
+Calls ```:empty?``` before and after the block
+
+```
+expect do
+  bob.first_name = 'Robert'
+  bob.last_name = 'Smith'
+  end.to change(bob, :full_name).from('Bob Smith').to('Robert Smith')
+```
+```
+x = 10
+expect { x += 1 }.to change{x}.from(10).to(11)
+expect { x += 1 }.to change { x  % 3 }.from(2).to(0)
+expect { x += 1 }.to change {x}.by(1)
+```
+
+## Observer Errors
+```
+expect { customer.delete }.to raise_error
+expect { customer.delete }.to raise_exception
+expect { 1/0 }.to raise_error(ZeroDivisionError)
+expect { 1/0 }.to raise_error.with_message('divided by 0')
+```
+
+## Observer Output
+```
+expect {print 'hello'}.to output.to_stdout
+expect {print 'hello' }.to output('hello').to_stdout
+```
+
+## Compound Expectations
+
+- to use and & or when doing expectations
+
+```
+s = 'Lynda'
+expect(s).to start_with('L').and end_with('a')
+expect(s.length).to be_even.or be < 6
+expect(s).to start_with('L') & end_with('a')
+expect(s.length).to be_even | be < 6
+```
+
+## Composing Matcher
+- more complex
+- new in Rspec 3
+- some matchers can accept other matchers as their argument
+
+```
+array = [1,2,3]
+expect(array).to all( be < 5 )
+expect(@item).to all(be_visible & be_in_stock)
+```
+### Even more:
+
+- all(matcher)
+- include(matcher)
+- start_with(matcher)
+- end_with(matcher)
+- change { }.from(matcher).to(matcher)
+- change { }.by(matcher)
+- raise_error.with_message(matcher)
